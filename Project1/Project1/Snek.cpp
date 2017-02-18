@@ -100,6 +100,12 @@ if size some number we want and win
 template <class ItemType>
 bool Snek::hasWon()
 {
+	int size = getscore();
+	return bool big = (size >= 25000);
+	/*
+	if (big)
+		cout << "Lmao you won yo but like let's speed up. lvl up!!!\n";
+		*/
 
 }
 
