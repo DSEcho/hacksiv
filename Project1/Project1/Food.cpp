@@ -1,22 +1,25 @@
+<<<<<<< HEAD
 #include "BigHead.h"
 #include <cstdlib>
 class Food
-{
-	float *pos[3];
-	const gridSize;
-	public:
-	void spawn();
-	float getPos();
-};
+=======
+#include "Food.h"
 
-Food()
+/*
+This method will be used spawn a food in the map  dimensions
+without overlapping with other food, or the sneks
+*/
+void spawn()
+>>>>>>> origin/master
 {
-	pos[0]= rand() % gridSize;
-	pos[1]= rand() % gridSize;
-	pos[2]= rand() % gridSize;
+
 }
 
-float  * getPosition()
+/*
+This returns the postion, which will be whole numbers,
+but the function that calls it wants floats, so floats.
+*/
+float getPos() 
 {
-	return pos;
+
 }
