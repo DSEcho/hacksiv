@@ -13,7 +13,6 @@ class Snek {
 private:
 	Node<ItemType>* = headptr;
 	int currentlength;
-	int direction;
 
 public:
 	bool collide();
