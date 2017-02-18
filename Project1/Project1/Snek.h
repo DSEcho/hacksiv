@@ -15,6 +15,7 @@ private:
 	int currentlength;
 	Food food;
 	int gridsize = 50;
+	int snakeSize;
 public:
 	bool collide();
 	bool hasWon();

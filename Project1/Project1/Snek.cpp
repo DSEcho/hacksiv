@@ -138,10 +138,45 @@ returns the current size minus default size
 template <class ItemType>
 int Snek::getScore()
 {
-
+	return int snakeSize * 10;
 }
 template <class ItemType>
 int Snek::spawnfood()
 {
+	Node<ItemType>* curPtr = headptr;
+	int x, y, z;
+	Food food;
+	int position[] = {x,y,z};
 
+	bool foodOverlap = true;
+
+	while (foodOverlap == true)
+	{
+		for(int index = 0; index < 3; index++)
+			position[index] = rand() % gridsize;
+
+		for (curPtr; curPtr != nullptr && foodOverlap; curPtr = curPtr->getNext())
+		{// ranges from 0 - 2
+		 // 0 is x
+		 // 1 is y
+		 // 2 is z
+			int countOfXYZMatch = 0;
+			for (int i = 0; i < 3; i++)
+			{
+
+				if (*curPtr[i] == position[i])
+				{
+					countOfXYZMatch++;
+				}
+			}
+			if (countOfXYZMatch == 3)
+			{
+				foodOverlap = true;
+			}
+			countOfXYZMatch = 0;
+		}
+
+		food.setPos(position);
+	}
+	
 }
