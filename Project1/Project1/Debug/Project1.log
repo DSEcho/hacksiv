@@ -1,0 +1,5 @@
+﻿  Food.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Node.cpp
+LINK : fatal error LNK1561: entry point must be defined

@@ -1,4 +1,3 @@
-#include "BigHead.h"
 #include "Snek.h"
 #include <iostream>
 using namespace std;
@@ -23,7 +22,7 @@ Node<ItemType>* Snek<ItemType>::traverse()
 	return lastptr;
 }
 template <class ItemType>
-bool Snek::collide()
+bool Snek<ItemType>::collide()
 {	
 	Node<ItemType>* lastptr = traverse();
 	Node<ItemType>* curPtr = headptr;
@@ -33,11 +32,11 @@ bool Snek::collide()
 	if (x >= gridSize || y >= gridSize || z >= gridSize || x < 0 || y < 0 || z < 0)
 
 	{
-		hit = true;//hit wall
+		hit = true; //hit wall
 	}
 	for (int i = 0; i < 3; i++)
 	{
-		if (food.getPos()[i] == *lastptr[i])
+		if ((food.getPos())[i] == *lastptr[i])
 		{
 			hit = true;
 		}
@@ -68,27 +67,29 @@ bool Snek::collide()
 	return hit;
 }
 
-/*
-we will be controlling all the positions of the linked list
 
-alex is writing something that will traverse a link list.
-
-
-eventually will call logic on chalk board
-*/
 template <class ItemType>
-void Snek::append(Direction)
-{
-
+void Snek<ItemType>::append(int *pos)
+{//LITERALLY ADD A TAIL THING
+	Node<ItemType>* lastptr = traverse();
+	lastptr->getnext() = new Node<ItemType>(*pos, nullptr);
+	currentlength++;
 }
 template <class ItemType>
-void Snek::removehead(Direction)
+void Snek<ItemType>::removehead()
 {
-
+	Node<ItemType>* newhead = headptr;
+	newhead = headptr->getNext();
+	currentlength--;
 }
 template <class ItemType>
-void Snek::move(Direction)
+void Snek<ItemType>::move(int *pos)
 {
+	append(pos);
+	if (!collidefood())
+	{
+		removehead();
+	}
 
 }
 
@@ -97,8 +98,8 @@ void Snek::move(Direction)
 if size some number we want and win
 
 */
-template <class ItemType>
-bool Snek::hasWon()
+/*template <class ItemType>
+bool Snek<ItemType>::hasWon()
 {
 
 }
@@ -112,7 +113,7 @@ snek body parts.
 
 */
 template <class ItemType>
-bool Snek::collidefood()
+bool Snek<ItemType>::collidefood()
 {
 	Node<ItemType>* lastptr = traverse();
 	int *foodpos = food.getpos();
@@ -129,13 +130,14 @@ bool Snek::collidefood()
 /*
 returns the current size minus default size
 */
-template <class ItemType>
-int Snek::getScore()
+/*template <class ItemType>
+int Snek<ItemType>::getScore()
 {
 
 }
 template <class ItemType>
-int Snek::spawnfood()
+int Snek<ItemType>::spawnfood()
 {
 
 }
+*/

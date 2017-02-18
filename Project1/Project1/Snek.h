@@ -11,18 +11,18 @@ using namespace std;
 template <class ItemType>
 class Snek {
 private:
-	Node<ItemType>* = headptr;
+	Node<ItemType>* headptr;
 	int currentlength;
-	Food food;
+	Food food;//; = new Food();
 	int gridsize = 50;
 public:
 	bool collide();
-	bool hasWon();
-	void move(int);
+	//bool hasWon();
+	void move(int *pos);
 	bool collidefood();
-	void getScore();
-	void spawnfood();
-	void append();
+	//void getScore();
+	//void spawnfood();
+	void append(int *pos);
 	void removehead();
 	Node<ItemType>* Snek<ItemType>::traverse();
 };

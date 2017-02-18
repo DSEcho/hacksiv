@@ -1,11 +1,9 @@
 #include "Food.h"
 #include "Snek.h"
 #include <cstdlib>
+using namespace std;
 
-Food::Food()
-{
-}
-int *Food::setPos(int* position)
+void Food::setPos(int* position)
 {
 	for (int i = 0; i < 3; i++)
 	{
