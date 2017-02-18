@@ -16,7 +16,7 @@ Food()
 	pos[2]= rand() % gridSize;
 }
 
-float * getPosition()
+float  * getPosition()
 {
 	return pos;
 }
