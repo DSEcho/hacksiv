@@ -1,5 +1,5 @@
 #include "BigHead.h"
-
+#include <cstdlib>
 class Food
 {
 	float *pos[3];
