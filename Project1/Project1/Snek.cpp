@@ -9,25 +9,35 @@ To be called after we move.
 returns true if collides with wall, self, and food
 */
 template <class ItemType>
-bool Snek::collide()
+Node<ItemType>* Snek<ItemType>::traverse()
 {
-	Node<ItemType> *curPtr = headptr;
-
+	Node<ItemType> *partyPtr = headptr;
+	Node<ItemType> * lastptr;
+	for (partyPtr; partyPtr != nullptr && !hit; partyPtr = partyPtr->getNext())
+	{
+		if (partyPtr->getNext() == nullptr)
+		{
+			lastptr = partyPtr;
+		}
+	}
+	return lastptr;
+}
+template <class ItemType>
+bool Snek::collide()
+{	
+	Node<ItemType>* lastptr = traverse();
+	Node<ItemType>* curPtr = headptr;
 	curPtr = curPtr->getNext();
 	bool hit = false;
 
-<<<<<<< HEAD
-
-	if (x >= 50 || y >= 50 || z >= 50 || x < 0 || y < 0 || z < 0)
-=======
 	if (x >= gridSize || y >= gridSize || z >= gridSize || x < 0 || y < 0 || z < 0)
->>>>>>> origin/master
+
 	{
 		hit = true;//hit wall
 	}
 	for (int i = 0; i < 3; i++)
 	{
-		if (food.getPos()[i] == *headPtr[i])
+		if (food.getPos()[i] == *lastptr[i])
 		{
 			hit = true;
 		}
@@ -43,7 +53,7 @@ bool Snek::collide()
 		for (int i = 0; i < 3; i++)
 		{
 
-			if (*curPtr[i] == *headptr[i])
+			if (*curPtr[i] == *lastptr[i])
 			{
 				countOfXYZMatch++;
 			}
@@ -53,14 +63,10 @@ bool Snek::collide()
 			hit = true;
 		}
 		countOfXYZMatch = 0;
-		
-
 	}
 
 	return hit;
 }
-
-
 
 /*
 we will be controlling all the positions of the linked list
@@ -70,6 +76,16 @@ alex is writing something that will traverse a link list.
 
 eventually will call logic on chalk board
 */
+template <class ItemType>
+void Snek::append(Direction)
+{
+
+}
+template <class ItemType>
+void Snek::removehead(Direction)
+{
+
+}
 template <class ItemType>
 void Snek::move(Direction)
 {
@@ -96,10 +112,18 @@ snek body parts.
 
 */
 template <class ItemType>
-void Snek::grow()
+bool Snek::collidefood()
 {
-
-
+	Node<ItemType>* lastptr = traverse();
+	int *foodpos = food.getpos();
+	for (int i = 0; i < 3; i++)
+	{
+		if (foodpos[i] == *lastptr[i])
+		{
+			countOfXYZMatch++;
+		}
+	}
+	return countOfXYZMatch == 3;
 }
 
 /*

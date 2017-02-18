@@ -14,12 +14,16 @@ private:
 	Node<ItemType>* = headptr;
 	int currentlength;
 	Food food;
+	int gridsize = 50;
 public:
 	bool collide();
 	bool hasWon();
 	void move(int);
-	void grow();
+	bool collidefood();
 	void getScore();
 	void spawnfood();
+	void append();
+	void removehead();
+	Node<ItemType>* Snek<ItemType>::traverse();
 };
 #endif
