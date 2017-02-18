@@ -16,7 +16,7 @@ bool Snek::collide()
 	curPtr = curPtr->getNext();
 	bool hit = false;
 
-	if (x >= 50 || y >= 50 || z >= 50 || x < 0 || y < 0 || z < 0)
+	if (x >= gridSize || y >= gridSize || z >= gridSize || x < 0 || y < 0 || z < 0)
 	{
 		hit = true;
 	}
