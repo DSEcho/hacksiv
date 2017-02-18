@@ -17,5 +17,5 @@ public:
 	This returns the postion, which will be whole numbers,
 	but the function that calls it wants floats, so floats.
 	*/
-	float getPos();
+	float *getPos();
 };

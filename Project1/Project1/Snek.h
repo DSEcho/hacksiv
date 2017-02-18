@@ -19,5 +19,6 @@ public:
 	bool hasWon();
 	void move(int);
 	void grow();
+	void getScore();
 };
 #endif

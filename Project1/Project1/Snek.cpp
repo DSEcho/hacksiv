@@ -8,12 +8,34 @@ bool Snek::collide()
 {
 
 }
+
 template <class ItemType>
 void Snek::move(Direction)
 {
 
 }
-	bool hasWon();
-	void grow();
-	int getScore();
-	void move();
+
+template <class ItemType>
+bool Snek::hasWon()
+{
+
+}
+
+template <class ItemType>
+void Snek::grow()
+{
+
+
+}
+
+template <class ItemType>
+int Snek::getScore()
+{
+
+}
+
+template <class ItemType>
+void Snek::move(int)
+{
+
+}
