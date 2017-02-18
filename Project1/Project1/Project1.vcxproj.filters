@@ -18,9 +18,6 @@
     <ClInclude Include="Node.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="BigHead.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Snek.h">
       <Filter>Source Files</Filter>
     </ClInclude>

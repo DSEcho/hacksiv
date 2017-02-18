@@ -110,7 +110,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="BigHead.h" />
     <ClInclude Include="Food.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Snek.h" />
