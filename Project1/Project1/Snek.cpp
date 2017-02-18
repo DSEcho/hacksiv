@@ -17,4 +17,3 @@ void Snek::move(Direction)
 	void grow();
 	int getScore();
 	void move();
-}
