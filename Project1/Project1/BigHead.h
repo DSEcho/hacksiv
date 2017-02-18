@@ -1,5 +1,4 @@
-#include "Snake.h"
+#include "Sneck.h"
 #include "Food.h"
 #include "Node.h"
-#include <iostream>
 
