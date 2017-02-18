@@ -13,12 +13,13 @@ class Snek {
 private:
 	Node<ItemType>* = headptr;
 	int currentlength;
-
+	Food food;
 public:
 	bool collide();
 	bool hasWon();
 	void move(int);
 	void grow();
 	void getScore();
+	void spawnfood();
 };
 #endif

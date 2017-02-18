@@ -1,19 +1,22 @@
 #include "Food.h"
+#include "Snek.h"
+#include <cstdlib>
 
-/*
-This method will be used spawn a food in the map  dimensions
-without overlapping with other food, or the sneks
-*/
-void Food::spawn()
+Food::Food()
 {
-
 }
-
+int *Food::setPos(int* position)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		pos[i] = position[i];
+	}
+}
 /*
 This returns the postion, which will be whole numbers,
 but the function that calls it wants floats, so floats.
 */
-float *Food::getPos()
+int *Food::getPos()
 {
 	return pos;
 }

@@ -16,10 +16,20 @@ bool Snek::collide()
 	curPtr = curPtr->getNext();
 	bool hit = false;
 
+
 	if (x >= 50 || y >= 50 || z >= 50 || x < 0 || y < 0 || z < 0)
 	{
-		hit = true;
+		hit = true;//hit wall
 	}
+	for (int i = 0; i < 3; i++)
+	{
+		if (food.getPos()[i] == *headPtr[i])
+		{
+			hit = true;
+		}
+	}
+	
+	// hit self.
 	for (curPtr; curPtr != nullptr && !hit; curPtr = curPtr->getNext())
 	{// ranges from 0 - 2
 		// 0 is x
@@ -39,7 +49,9 @@ bool Snek::collide()
 			hit = true;
 		}
 		countOfXYZMatch = 0;
-	}//have checked if hitted self.
+		
+
+	}
 
 	return hit;
 }
@@ -91,6 +103,11 @@ returns the current size minus default size
 */
 template <class ItemType>
 int Snek::getScore()
+{
+
+}
+template <class ItemType>
+int Snek::spawnfood()
 {
 
 }
