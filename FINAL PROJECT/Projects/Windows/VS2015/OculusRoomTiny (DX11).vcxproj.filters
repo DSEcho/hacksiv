@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\main.cpp" />
+    <ClCompile Include="..\..\..\Node.cpp" />
+    <ClCompile Include="..\..\..\Food.cpp" />
+    <ClCompile Include="..\..\..\Snek.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\OculusRoomTiny_Advanced\Common\Win32_DirectXAppUtil.h" />
+    <ClInclude Include="..\..\..\Food.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Node.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Snek.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="headers">
+      <UniqueIdentifier>{6366641c-afd2-4645-9742-3b921273172d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
